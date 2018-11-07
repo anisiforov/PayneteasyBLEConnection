@@ -22,53 +22,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="49535343-FE7D-4AE5-8FA9-9FAFD205E455" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="J6h-Xz-by8">
-                                <rect key="frame" x="20" y="74" width="335" height="30"/>
+                                <rect key="frame" x="20" y="70" width="335" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardType="alphabet" returnKeyType="go"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NnK-ys-Rnv"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service UUID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXR-LY-7pv">
-                                <rect key="frame" x="20" y="50" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="50" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-r4-5sT">
-                                <rect key="frame" x="65.5" y="124" width="244" height="30"/>
-                                <state key="normal" title="Retrieve Peripherals for this Service"/>
+                                <rect key="frame" x="20" y="120" width="97" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="Start scanning"/>
                                 <connections>
-                                    <action selector="buttonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9zl-SG-DZ6"/>
+                                    <action selector="buttonScanTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdf-za-uVp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peripherals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P1-Iy-n0W">
-                                <rect key="frame" x="20" y="174" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="169" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WTp-Go-ML8">
-                                <rect key="frame" x="20" y="201" width="335" height="436"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WTp-Go-ML8">
+                                <rect key="frame" x="20" y="192" width="335" height="445"/>
                                 <color key="backgroundColor" white="0.97590215773809508" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhn-oS-3S8">
+                                <rect key="frame" x="222" y="120" width="133" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="Retrieve Peripherals"/>
+                                <connections>
+                                    <action selector="buttonRetrieveTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cns-C7-2re"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wFX-r4-5sT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ai-BZ-VQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="yhn-oS-3S8" secondAttribute="trailing" constant="20" id="4uQ-cF-H5o"/>
                             <constraint firstAttribute="trailing" secondItem="0P1-Iy-n0W" secondAttribute="trailing" constant="20" id="E4M-Vy-nyh"/>
                             <constraint firstAttribute="trailing" secondItem="CXR-LY-7pv" secondAttribute="trailing" constant="20" id="GAQ-zp-e9H"/>
                             <constraint firstItem="J6h-Xz-by8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PQg-Eg-hxs"/>
                             <constraint firstItem="0P1-Iy-n0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PVE-OB-h80"/>
                             <constraint firstItem="J6h-Xz-by8" firstAttribute="top" secondItem="CXR-LY-7pv" secondAttribute="bottom" constant="3" id="QHR-5L-DvZ"/>
+                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="yhn-oS-3S8" secondAttribute="bottom" constant="20" id="Rds-wV-tmn"/>
+                            <constraint firstItem="wFX-r4-5sT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="X1W-l5-1LZ"/>
                             <constraint firstItem="WTp-Go-ML8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Zuu-H1-aZP"/>
                             <constraint firstItem="WTp-Go-ML8" firstAttribute="top" secondItem="0P1-Iy-n0W" secondAttribute="bottom" constant="6" id="aAG-t1-Ond"/>
+                            <constraint firstItem="yhn-oS-3S8" firstAttribute="top" secondItem="J6h-Xz-by8" secondAttribute="bottom" constant="20" id="amL-R4-lHk"/>
                             <constraint firstItem="eRA-RP-mpB" firstAttribute="top" secondItem="WTp-Go-ML8" secondAttribute="bottom" constant="30" id="bE1-ZU-bVM"/>
                             <constraint firstItem="CXR-LY-7pv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="iaC-w2-kN3"/>
+                            <constraint firstItem="yhn-oS-3S8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wFX-r4-5sT" secondAttribute="trailing" constant="20" id="mkf-Pn-oik"/>
                             <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="wFX-r4-5sT" secondAttribute="bottom" constant="20" id="nTL-qh-cB6"/>
                             <constraint firstAttribute="trailing" secondItem="J6h-Xz-by8" secondAttribute="trailing" constant="20" id="ruH-oe-bOr"/>
                             <constraint firstItem="wFX-r4-5sT" firstAttribute="top" secondItem="J6h-Xz-by8" secondAttribute="bottom" constant="20" id="s7x-4E-hgM"/>
@@ -77,6 +89,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonScan" destination="wFX-r4-5sT" id="UuG-PR-Jdv"/>
                         <outlet property="textField" destination="J6h-Xz-by8" id="Xbj-Jq-LZt"/>
                         <outlet property="textView" destination="WTp-Go-ML8" id="gQp-3T-zAO"/>
                     </connections>

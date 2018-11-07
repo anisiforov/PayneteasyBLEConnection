@@ -15,6 +15,7 @@
 		A52B73582189FA2200308E9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B73572189FA2200308E9B /* main.m */; };
 		A570FF642191CEC7002BA6C3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A570FF632191CEC7002BA6C3 /* CoreBluetooth.framework */; };
 		A570FF662191D663002BA6C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A570FF652191D663002BA6C3 /* Default-568h@2x.png */; };
+		A570FF682191E51F002BA6C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A570FF672191E51F002BA6C3 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		A52B73572189FA2200308E9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A570FF632191CEC7002BA6C3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A570FF652191D663002BA6C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A570FF672191E51F002BA6C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		A570FF692191E51F002BA6C3 /* PayneteasyBLEConnection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayneteasyBLEConnection.entitlements; sourceTree = "<group>"; };
 		B6BF4B1F6897614FC9B2BBBC /* libPods-PayneteasyBLEConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PayneteasyBLEConnection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72D90FAA9AF633E086B4242 /* Pods-PayneteasyBLEConnection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayneteasyBLEConnection.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayneteasyBLEConnection/Pods-PayneteasyBLEConnection.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A570FF682191E51F002BA6C3 /* ExternalAccessory.framework in Frameworks */,
 				A570FF642191CEC7002BA6C3 /* CoreBluetooth.framework in Frameworks */,
 				1EC7A8D8EF0C6C46195ADD14 /* libPods-PayneteasyBLEConnection.a in Frameworks */,
 			);
@@ -77,6 +81,7 @@
 		A52B73472189FA2100308E9B /* PayneteasyBLEConnection */ = {
 			isa = PBXGroup;
 			children = (
+				A570FF692191E51F002BA6C3 /* PayneteasyBLEConnection.entitlements */,
 				A52B73482189FA2100308E9B /* AppDelegate.h */,
 				A52B73492189FA2100308E9B /* AppDelegate.m */,
 				A52B734B2189FA2100308E9B /* ViewController.h */,
@@ -93,6 +98,7 @@
 		A570FF622191CEC7002BA6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A570FF672191E51F002BA6C3 /* ExternalAccessory.framework */,
 				A570FF632191CEC7002BA6C3 /* CoreBluetooth.framework */,
 				B6BF4B1F6897614FC9B2BBBC /* libPods-PayneteasyBLEConnection.a */,
 			);
@@ -110,6 +116,8 @@
 				A52B73412189FA2100308E9B /* Sources */,
 				A52B73422189FA2100308E9B /* Frameworks */,
 				A52B73432189FA2100308E9B /* Resources */,
+				C71FB4BB5F481CE7D9E1761D /* [CP] Embed Pods Frameworks */,
+				2B2C04285C60F634549CB933 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +139,12 @@
 				TargetAttributes = {
 					A52B73442189FA2100308E9B = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -181,7 +195,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B2C04285C60F634549CB933 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayneteasyBLEConnection/Pods-PayneteasyBLEConnection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C71FB4BB5F481CE7D9E1761D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayneteasyBLEConnection/Pods-PayneteasyBLEConnection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -262,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -315,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -328,12 +380,18 @@
 			baseConfigurationReference = 1FE387F6B5F1D54F3EBF3B0C /* Pods-PayneteasyBLEConnection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PayneteasyBLEConnection/PayneteasyBLEConnection.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MLSXY8DHA;
 				INFOPLIST_FILE = PayneteasyBLEConnection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.payneteasy.PayneteasyBLEConnection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse com.payneteasy.PayneteasyBLEConnection";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -343,12 +401,18 @@
 			baseConfigurationReference = F72D90FAA9AF633E086B4242 /* Pods-PayneteasyBLEConnection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PayneteasyBLEConnection/PayneteasyBLEConnection.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8MLSXY8DHA;
 				INFOPLIST_FILE = PayneteasyBLEConnection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.payneteasy.PayneteasyBLEConnection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse com.payneteasy.PayneteasyBLEConnection";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

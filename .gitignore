@@ -16,9 +16,7 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-
-.fastlane/report.xml
-.fastlane/readme.md
+.fastlane
 
 Podfile.lock
 Pods/*
