@@ -4,9 +4,8 @@
 
 #define Object(obj) obj ? obj : [NSNull null]
 
-@interface ViewController () <UITextFieldDelegate, CBCentralManagerDelegate>
+@interface ViewController () <CBCentralManagerDelegate>
 
-@property (nonatomic, weak) IBOutlet UITextField *textField;
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 @property (nonatomic, weak) IBOutlet UIButton *buttonScan;
 
@@ -30,12 +29,9 @@
 }
 
 - (void)startScan {
-    _textView.text = nil;
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:_textField.text];
-    if (serviceUUID) {
-        [_centralManager scanForPeripheralsWithServices:nil options:nil];
-        [_buttonScan setTitle:@"Stop scanning" forState:UIControlStateNormal];
-    }
+    [self clearData];
+    [_centralManager scanForPeripheralsWithServices:nil options:nil];
+    [_buttonScan setTitle:@"Stop scanning" forState:UIControlStateNormal];
 }
 
 - (void)stopScan {
@@ -43,11 +39,21 @@
     [_buttonScan setTitle:@"Start scanning" forState:UIControlStateNormal];
 }
 
-#pragma mark - UITextFieldDelegate
+- (void)clearData {
+    [_arrayIdentifiers removeAllObjects];
+    [self updateData];
+}
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self retrieveConnectedPeripherals];
-    return YES;
+- (void)updateData {
+    NSInteger num = 0;
+    NSString *text = nil;
+    for (NSString *identifier in _arrayIdentifiers) {
+        num++;
+        NSDictionary *dict = _dictPeripherals[identifier];
+        NSString *item = [NSString stringWithFormat:@"%ld. UUID=%@\nname=%@\nadvertisementData=%@", (long)num, dict[@"UUID"], dict[@"name"], dict[@"advertisementData"]];
+        text = text.length ? [text stringByAppendingFormat:@"\n\n%@", item] : item;
+    }
+    _textView.text = text;
 }
 
 #pragma mark - CBCentralManagerDelegate
@@ -61,27 +67,7 @@
         if (![_arrayIdentifiers containsObject:identifier])
             [_arrayIdentifiers addObject:identifier];
         _dictPeripherals[identifier] = @{ @"UUID" : identifier, @"name" : Object(peripheral.name), @"advertisementData" : Object(advertisementData)};
-    }
-    NSInteger num = 0;
-    NSString *text = nil;
-    for (NSString *identifier in _arrayIdentifiers) {
-        num++;
-        NSDictionary *dict = _dictPeripherals[identifier];
-        NSString *item = [NSString stringWithFormat:@"%ld. UUID=%@\nname=%@\nadvertisementData=%@", (long)num, dict[@"UUID"], dict[@"name"], dict[@"advertisementData"]];
-        text = text.length ? [text stringByAppendingFormat:@"\n\n%@", item] : item;
-    }
-    _textView.text = text;
-    
-}
-
-- (void)retrieveConnectedPeripherals {
-    [_textView becomeFirstResponder];
-    _textView.text = nil;
-    
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:_textField.text];
-    if (serviceUUID) {
-        NSArray<CBPeripheral *> *array = [_centralManager retrieveConnectedPeripheralsWithServices:@[serviceUUID]];
-        _textView.text = [array description];
+        [self updateData];
     }
 }
 
@@ -95,11 +81,10 @@
     }
 }
 
-- (IBAction)buttonRetrieveTouchUpInside:(UIButton *)button {
-    if (_centralManager.isScanning) {
+- (IBAction)buttonClearTouchUpInside:(UIButton *)button {
+    if (_centralManager.isScanning)
         [self stopScan];
-    }
-    [self retrieveConnectedPeripherals];
+    [self clearData];
 }
 
 @end

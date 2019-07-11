@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,76 +21,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="49535343-FE7D-4AE5-8FA9-9FAFD205E455" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="J6h-Xz-by8">
-                                <rect key="frame" x="20" y="70" width="335" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardType="alphabet" returnKeyType="go"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NnK-ys-Rnv"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service UUID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXR-LY-7pv">
-                                <rect key="frame" x="20" y="50" width="335" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-r4-5sT">
-                                <rect key="frame" x="20" y="120" width="97" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-r4-5sT">
+                                <rect key="frame" x="20" y="40" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rxd-GV-XwB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <state key="normal" title="Start scanning"/>
                                 <connections>
                                     <action selector="buttonScanTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdf-za-uVp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-C2-4nr">
+                                <rect key="frame" x="271" y="40" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HJc-mx-eDG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="Clear results"/>
+                                <connections>
+                                    <action selector="buttonClearTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hav-25-TjW"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peripherals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P1-Iy-n0W">
-                                <rect key="frame" x="20" y="169" width="335" height="17"/>
+                                <rect key="frame" x="20" y="90" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WTp-Go-ML8">
-                                <rect key="frame" x="20" y="192" width="335" height="445"/>
+                                <rect key="frame" x="20" y="113" width="335" height="524"/>
                                 <color key="backgroundColor" white="0.97590215773809508" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhn-oS-3S8">
-                                <rect key="frame" x="222" y="120" width="133" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <state key="normal" title="Retrieve Peripherals"/>
-                                <connections>
-                                    <action selector="buttonRetrieveTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cns-C7-2re"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yhn-oS-3S8" secondAttribute="trailing" constant="20" id="4uQ-cF-H5o"/>
-                            <constraint firstAttribute="trailing" secondItem="0P1-Iy-n0W" secondAttribute="trailing" constant="20" id="E4M-Vy-nyh"/>
-                            <constraint firstAttribute="trailing" secondItem="CXR-LY-7pv" secondAttribute="trailing" constant="20" id="GAQ-zp-e9H"/>
-                            <constraint firstItem="J6h-Xz-by8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PQg-Eg-hxs"/>
-                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PVE-OB-h80"/>
-                            <constraint firstItem="J6h-Xz-by8" firstAttribute="top" secondItem="CXR-LY-7pv" secondAttribute="bottom" constant="3" id="QHR-5L-DvZ"/>
-                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="yhn-oS-3S8" secondAttribute="bottom" constant="20" id="Rds-wV-tmn"/>
-                            <constraint firstItem="wFX-r4-5sT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="X1W-l5-1LZ"/>
-                            <constraint firstItem="WTp-Go-ML8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Zuu-H1-aZP"/>
-                            <constraint firstItem="WTp-Go-ML8" firstAttribute="top" secondItem="0P1-Iy-n0W" secondAttribute="bottom" constant="6" id="aAG-t1-Ond"/>
-                            <constraint firstItem="yhn-oS-3S8" firstAttribute="top" secondItem="J6h-Xz-by8" secondAttribute="bottom" constant="20" id="amL-R4-lHk"/>
-                            <constraint firstItem="eRA-RP-mpB" firstAttribute="top" secondItem="WTp-Go-ML8" secondAttribute="bottom" constant="30" id="bE1-ZU-bVM"/>
-                            <constraint firstItem="CXR-LY-7pv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="iaC-w2-kN3"/>
-                            <constraint firstItem="yhn-oS-3S8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wFX-r4-5sT" secondAttribute="trailing" constant="20" id="mkf-Pn-oik"/>
-                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="wFX-r4-5sT" secondAttribute="bottom" constant="20" id="nTL-qh-cB6"/>
-                            <constraint firstAttribute="trailing" secondItem="J6h-Xz-by8" secondAttribute="trailing" constant="20" id="ruH-oe-bOr"/>
-                            <constraint firstItem="wFX-r4-5sT" firstAttribute="top" secondItem="J6h-Xz-by8" secondAttribute="bottom" constant="20" id="s7x-4E-hgM"/>
-                            <constraint firstAttribute="trailing" secondItem="WTp-Go-ML8" secondAttribute="trailing" constant="20" id="t1d-H0-gsq"/>
-                            <constraint firstItem="CXR-LY-7pv" firstAttribute="top" secondItem="G0A-CG-IbV" secondAttribute="bottom" constant="30" id="yUp-dd-qQV"/>
+                            <constraint firstItem="wFX-r4-5sT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="1no-YH-03m"/>
+                            <constraint firstItem="wFX-r4-5sT" firstAttribute="top" secondItem="G0A-CG-IbV" secondAttribute="bottom" constant="20" id="63V-c2-s93"/>
+                            <constraint firstAttribute="trailing" secondItem="WTp-Go-ML8" secondAttribute="trailing" constant="20" id="BrZ-07-mCO"/>
+                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="wFX-r4-5sT" secondAttribute="bottom" constant="20" id="CRB-07-p2u"/>
+                            <constraint firstItem="WTp-Go-ML8" firstAttribute="top" secondItem="0P1-Iy-n0W" secondAttribute="bottom" constant="6" id="HKN-bg-mTX"/>
+                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QTd-oM-JpE"/>
+                            <constraint firstItem="0P1-Iy-n0W" firstAttribute="top" secondItem="7pp-C2-4nr" secondAttribute="bottom" constant="20" id="SIO-cq-nys"/>
+                            <constraint firstItem="7pp-C2-4nr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wFX-r4-5sT" secondAttribute="trailing" constant="20" id="TKF-j9-LEd"/>
+                            <constraint firstItem="eRA-RP-mpB" firstAttribute="top" secondItem="WTp-Go-ML8" secondAttribute="bottom" constant="30" id="XtQ-DI-8X2"/>
+                            <constraint firstItem="WTp-Go-ML8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cQG-bx-9TC"/>
+                            <constraint firstAttribute="trailing" secondItem="0P1-Iy-n0W" secondAttribute="trailing" constant="20" id="ghB-kV-Hf9"/>
+                            <constraint firstItem="7pp-C2-4nr" firstAttribute="top" secondItem="G0A-CG-IbV" secondAttribute="bottom" constant="20" id="p4y-P9-03k"/>
+                            <constraint firstAttribute="trailing" secondItem="7pp-C2-4nr" secondAttribute="trailing" constant="20" id="pv6-F4-Co9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonScan" destination="wFX-r4-5sT" id="UuG-PR-Jdv"/>
-                        <outlet property="textField" destination="J6h-Xz-by8" id="Xbj-Jq-LZt"/>
                         <outlet property="textView" destination="WTp-Go-ML8" id="gQp-3T-zAO"/>
                     </connections>
                 </viewController>
